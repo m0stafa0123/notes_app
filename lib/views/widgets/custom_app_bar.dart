@@ -9,6 +9,7 @@ class CustomAppbar extends StatelessWidget {
     return Row(
       children: [
         Text("NOTES", style: TextStyle(fontSize: 25)),
+        Spacer(flex: 1),
         CustomIconSearch(),
       ],
     );
