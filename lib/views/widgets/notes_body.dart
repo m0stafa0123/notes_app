@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/views/edit_note_view.dart';
 import 'package:flutter_application_1/views/widgets/custom_app_bar.dart';
 import 'package:flutter_application_1/views/widgets/custome_notes_listview.dart';
 
@@ -9,14 +10,21 @@ class NotesBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 24),
-      child: Column(
-        
-        children: [
-          SizedBox(height: 25),
-          CustomAppbar(),
-          SizedBox(height: 15),
-          Expanded(child: CustomeNotesListview()),
-        ],
+      child: InkWell(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const EditNoteView()),
+          );
+        },
+        child: Column(
+          children: [
+            SizedBox(height: 25),
+            CustomAppbar(text: 'Notes', icon: Icons.search),
+            SizedBox(height: 15),
+            Expanded(child: CustomeNotesListview()),
+          ],
+        ),
       ),
     );
   }
