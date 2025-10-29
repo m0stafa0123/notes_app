@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/views/widgets/custom_button.dart';
+import 'package:flutter_application_1/views/widgets/button_sheet_notes.dart';
 import 'package:flutter_application_1/views/widgets/notes_body.dart';
 
 class NotesView extends StatelessWidget {
@@ -13,7 +13,7 @@ class NotesView extends StatelessWidget {
           showModalBottomSheet(
             context: context,
             builder: (context) {
-              return CustomButton();
+              return ButtonSheetNotes();
             },
           );
         },
