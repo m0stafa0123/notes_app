@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/cubits/add_notes_cubit/add_note_cubit.dart';
 import 'package:flutter_application_1/models/notes_model.dart';
 // import 'package:flutter_application_1/models/notes_model.dart';
-import 'package:flutter_application_1/views/widgets/custom_button.dart';
-import 'package:flutter_application_1/views/widgets/custom_text_field.dart';
+import 'package:flutter_application_1/views/widgets/custom/custom_button.dart';
+import 'package:flutter_application_1/views/widgets/custom/custom_text_field.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 

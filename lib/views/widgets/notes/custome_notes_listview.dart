@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/cubits/notes_cubit/notes_cubit.dart';
 import 'package:flutter_application_1/models/notes_model.dart';
-import 'package:flutter_application_1/views/widgets/custom_notes_item.dart';
+import 'package:flutter_application_1/views/widgets/notes/custom_notes_item.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CustomeNotesListview extends StatelessWidget {
