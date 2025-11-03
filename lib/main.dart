@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/constant.dart';
-import 'package:flutter_application_1/cubits/add_notes_cubit/add_note_cubit.dart';
 import 'package:flutter_application_1/models/notes_model.dart';
 import 'package:flutter_application_1/views/notes_view.dart';
 import 'package:flutter_application_1/views/widgets/simple_bloc_observer.dart';
@@ -21,13 +20,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [BlocProvider(create: (context) => AddNoteCubit())],
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(brightness: Brightness.dark, fontFamily: "Poppins"),
-        home: const NotesView(),
-      ),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(brightness: Brightness.dark, fontFamily: "Poppins"),
+      home: const NotesView(),
     );
   }
 }
