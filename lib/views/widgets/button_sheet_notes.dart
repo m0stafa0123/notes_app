@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/cubits/add_notes_cubit/add_note_cubit.dart';
+import 'package:flutter_application_1/cubits/notes_cubit/notes_cubit.dart';
 import 'package:flutter_application_1/views/widgets/form_button_sheet.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 // import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
@@ -17,6 +18,7 @@ class ButtonSheetNotes extends StatelessWidget {
             print(state.erorrMessage);
           }
           if (state is AddNotesucsess) {
+            BlocProvider.of<NotesCubit>(context).fetchAllNotes();
             Navigator.pop(context);
           }
         },
