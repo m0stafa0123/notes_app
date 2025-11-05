@@ -1,33 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/constant.dart';
 import 'package:flutter_application_1/cubits/add_notes_cubit/add_note_cubit.dart';
+import 'package:flutter_application_1/models/notes_model.dart';
+import 'package:flutter_application_1/views/widgets/notes_sheet/custome_color_list_view.dart';
+// import 'package:flutter_application_1/views/widgets/custom/custome_color_list_view.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class CustomeColor extends StatelessWidget {
-  const CustomeColor({super.key, required this.isPicked, required this.color});
-  final bool isPicked;
-  final Color color;
+class ColorsListViewEdit extends StatefulWidget {
+  const ColorsListViewEdit({super.key, required this.notesModel});
+  final NotesModel notesModel;
 
   @override
-  Widget build(BuildContext context) {
-    return isPicked
-        ? CircleAvatar(
-            backgroundColor: Colors.white,
-            radius: 38,
-            child: CircleAvatar(radius: 34, backgroundColor: color),
-          )
-        : CircleAvatar(radius: 34, backgroundColor: color);
-  }
+  State<ColorsListViewEdit> createState() => _ColorsListViewEditState();
 }
 
-class ColorsListView extends StatefulWidget {
-  const ColorsListView({super.key});
-
-  @override
-  State<ColorsListView> createState() => _ColorsListViewState();
-}
-
-class _ColorsListViewState extends State<ColorsListView> {
+class _ColorsListViewEditState extends State<ColorsListViewEdit> {
   int indexCount = 0;
 
   @override
@@ -41,7 +28,7 @@ class _ColorsListViewState extends State<ColorsListView> {
           child: InkWell(
             onTap: () {
               indexCount = index;
-              BlocProvider.of<AddNoteCubit>(context).color = knoteColors[index];
+              widget.notesModel.color = knoteColors[index].value;
               setState(() {});
             },
             child: CustomeColor(

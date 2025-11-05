@@ -3,6 +3,7 @@ import 'package:flutter_application_1/cubits/notes_cubit/notes_cubit.dart';
 import 'package:flutter_application_1/models/notes_model.dart';
 import 'package:flutter_application_1/views/widgets/custom/custom_app_bar.dart';
 import 'package:flutter_application_1/views/widgets/custom/custom_text_field.dart';
+import 'package:flutter_application_1/views/widgets/edit_notes/custom_color_list.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class EditNotesBody extends StatefulWidget {
@@ -46,6 +47,9 @@ class _EditNotesBodyState extends State<EditNotesBody> {
             subtitle = value;
           },
         ),
+        SizedBox(height: 32),
+
+        SizedBox(height: 38 * 2, child: ColorsListViewEdit(notesModel: widget.notesModel,)),
       ],
     );
   }
