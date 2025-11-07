@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CustomeNotesListview extends StatelessWidget {
   const CustomeNotesListview({super.key});
+  
 
   @override
   Widget build(context) {
@@ -21,6 +22,7 @@ class CustomeNotesListview extends StatelessWidget {
             itemBuilder: (context, index) {
               return Padding(
                 padding: const EdgeInsets.symmetric(vertical: 12),
+                
                 child: CustomNotesItem(notesModel: notes[index]),
               );
             },
